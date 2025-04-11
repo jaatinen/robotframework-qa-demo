@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2.2 (Python 3.13.2 on darwin)" generated="2025-04-08T15:37:39.724148" rpa="false" schemaversion="5">
+<suite id="s1" name="Login Test" source="/Users/juhojaatinen/robotframework-qa-demo/tests/login_test.robot">
+<test id="s1-t1" name="Wikipedia Page Should Load Successfully" line="10">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-04-08T15:37:39.793814" level="INFO">Opening browser 'Chrome' to base url 'https://www.wikipedia.org/'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-04-08T15:37:39.793697" elapsed="1.019848"/>
+</kw>
+<kw name="Title Should Be" owner="SeleniumLibrary">
+<msg time="2025-04-08T15:37:40.815997" level="INFO">Page title is 'Wikipedia'.</msg>
+<arg>Wikipedia</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<status status="PASS" start="2025-04-08T15:37:40.813955" elapsed="0.002092"/>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2025-04-08T15:37:40.820342" level="INFO">Current page contains element 'id=searchInput'.</msg>
+<arg>id=searchInput</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2025-04-08T15:37:40.816175" elapsed="0.004207"/>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2025-04-08T15:37:40.836807" level="INFO">Current page contains element 'id=js-link-box-en'.</msg>
+<arg>id=js-link-box-en</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2025-04-08T15:37:40.820474" elapsed="0.016387"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-04-08T15:37:40.836989" elapsed="0.071046"/>
+</kw>
+<status status="PASS" start="2025-04-08T15:37:39.793289" elapsed="1.114965"/>
+</test>
+<test id="s1-t2" name="Search Field Should Be Functional" line="18">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-04-08T15:37:40.908689" level="INFO">Opening browser 'Chrome' to base url 'https://www.wikipedia.org/'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-04-08T15:37:40.908583" elapsed="0.923252"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>id=searchInput</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-04-08T15:37:41.832130" elapsed="0.011481"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-04-08T15:37:41.844098" level="INFO">Typing text 'Robot Framework' into text field 'id=searchInput'.</msg>
+<arg>id=searchInput</arg>
+<arg>Robot Framework</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-04-08T15:37:41.843785" elapsed="0.075047"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-04-08T15:37:41.919076" level="INFO">Clicking element 'xpath=//button[@type='submit']'.</msg>
+<arg>xpath=//button[@type='submit']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-04-08T15:37:41.918971" elapsed="0.022979"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Robot Framework on geneerinen testiautomaatio-framework</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-04-08T15:37:41.942074" elapsed="0.873419"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-04-08T15:37:42.815647" elapsed="0.071183"/>
+</kw>
+<status status="PASS" start="2025-04-08T15:37:40.908394" elapsed="1.978622"/>
+</test>
+<test id="s1-t3" name="Language Dropdown Should Be Visible" line="26">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-04-08T15:37:42.887490" level="INFO">Opening browser 'Chrome' to base url 'https://www.wikipedia.org/'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-04-08T15:37:42.887356" elapsed="0.916694"/>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2025-04-08T15:37:43.809785" level="INFO">Current page contains element 'id=js-link-box-en'.</msg>
+<arg>id=js-link-box-en</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2025-04-08T15:37:43.804511" elapsed="0.005334"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-04-08T15:37:43.809971" elapsed="0.070574"/>
+</kw>
+<status status="PASS" start="2025-04-08T15:37:42.887153" elapsed="0.993675"/>
+</test>
+<status status="PASS" start="2025-04-08T15:37:39.724596" elapsed="4.156714"/>
+</suite>
+<statistics>
+<total>
+<stat pass="3" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Login Test" id="s1" pass="3" fail="0" skip="0">Login Test</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

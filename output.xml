@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2.2 (Python 3.13.2 on darwin)" generated="2025-04-09T21:57:44.128498" rpa="false" schemaversion="5">
+<suite id="s1" name="Ui" source="/Users/juhojaatinen/robotframework-qa-demo/tests/ui">
+<suite id="s1-s1" name="Login Test" source="/Users/juhojaatinen/robotframework-qa-demo/tests/ui/login_test.robot">
+<test id="s1-s1-t1" name="Wikipedia Page Should Load Successfully" line="8">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-04-09T21:57:44.201526" level="INFO">Opening browser 'chrome' to base url 'https://www.wikipedia.org'.</msg>
+<arg>${URL}</arg>
+<arg>chrome</arg>
+<arg>--headless</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-04-09T21:57:44.201422" elapsed="1.595744"/>
+</kw>
+<kw name="Title Should Be" owner="SeleniumLibrary">
+<msg time="2025-04-09T21:57:45.801180" level="INFO">Page title is 'Wikipedia'.</msg>
+<arg>Wikipedia</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<status status="PASS" start="2025-04-09T21:57:45.797608" elapsed="0.003634"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-04-09T21:57:45.801483" elapsed="0.071473"/>
+</kw>
+<doc>Test that the Example page loads successfully.</doc>
+<status status="PASS" start="2025-04-09T21:57:44.201031" elapsed="1.672011"/>
+</test>
+<status status="PASS" start="2025-04-09T21:57:44.139990" elapsed="1.733336"/>
+</suite>
+<status status="PASS" start="2025-04-09T21:57:44.129057" elapsed="1.744495"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Ui" id="s1" pass="1" fail="0" skip="0">Ui</stat>
+<stat name="Login Test" id="s1-s1" pass="1" fail="0" skip="0">Ui.Login Test</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
