@@ -92,13 +92,17 @@ jobs:
           wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
           sudo dpkg -i google-chrome-stable_current_amd64.deb || sudo apt-get install -f -y
           sudo apt-get install -y chromium-chromedriver
-          # Create symbolic links only if they don't already exist
-          [ -L /usr/bin/google-chrome ] || sudo ln -sf /usr/bin/google-chrome /opt/google/chrome/google-chrome
-          [ -L /usr/local/bin/chromedriver ] || sudo ln -sf /usr/bin/chromedriver /usr/local/bin/chromedriver
+          # Ensure symbolic links are correct
+          if [ ! -f /opt/google/chrome/google-chrome ]; then
+            sudo ln -sf /usr/bin/google-chrome /opt/google/chrome/google-chrome
+          fi
+          if [ ! -f /usr/local/bin/chromedriver ]; then
+            sudo ln -sf /usr/bin/chromedriver /usr/local/bin/chromedriver
+          fi
           export PATH=$PATH:/opt/google/chrome:/usr/local/bin
           # Verify installation
-          which google-chrome
-          which chromedriver
+          google-chrome --version
+          chromedriver --version
 
       - name: Install Python dependencies
         run: pip install -r requirements.txt
