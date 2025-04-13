@@ -72,3 +72,39 @@ jobs:
           rm -f results.jtl
       - name: Run JMeter test
         run: jmeter -n -t tests/performance/reqres_api_test.jmx -l results.jtl -e -o tests/performance/html-report
+  
+  name: Run Single Robot Framework UI Test (Chrome)
+
+  run-single-robot-test:
+    runs-on: ubuntu-latest
+    name: Run Single Robot Framework UI Test
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+
+      - name: Install Chrome and ChromeDriver
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y wget
+          wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+          sudo dpkg -i google-chrome-stable_current_amd64.deb || sudo apt-get install -f -y
+          sudo apt-get install -y chromium-chromedriver
+          # Luo symboliset linkit, jotta chromedriver löytyy PATHista
+          sudo ln -sf /usr/bin/google-chrome /usr/local/bin/google-chrome
+          sudo ln -sf /usr/bin/chromedriver /usr/local/bin/chromedriver
+          export PATH=$PATH:/usr/local/bin
+          # Varmista, että chromedriver löytyy PATHista
+          which chromedriver
+
+      - name: Install Python dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run a single Robot Framework UI Test
+        env:
+          ROBOT_BROWSER: chrome
+        run: robot login_test2.robot      
