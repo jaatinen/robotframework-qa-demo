@@ -92,11 +92,12 @@ jobs:
           wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
           sudo dpkg -i google-chrome-stable_current_amd64.deb || sudo apt-get install -f -y
           sudo apt-get install -y chromium-chromedriver
-          # Luo symboliset linkit, jotta chromedriver löytyy PATHista
-          sudo ln -sf /usr/bin/google-chrome /usr/local/bin/google-chrome
+          # Create symbolic links to ensure binaries are accessible
+          sudo ln -sf /usr/bin/google-chrome /opt/google/chrome/google-chrome
           sudo ln -sf /usr/bin/chromedriver /usr/local/bin/chromedriver
-          export PATH=$PATH:/usr/local/bin
-          # Varmista, että chromedriver löytyy PATHista
+          export PATH=$PATH:/opt/google/chrome:/usr/local/bin
+          # Verify installation
+          which google-chrome
           which chromedriver
 
       - name: Install Python dependencies
