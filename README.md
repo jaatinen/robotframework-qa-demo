@@ -1,24 +1,32 @@
 # Robot Framework QA Demo
 
-Lyhyt demo pyrkii kuvaamaan osaamista muutaman avainteknologian osalta käyttämällä Robot Frameworkia ja esimerkiksi React Testing Libraryä.
+This is a short demo project illustrating how to work with key testing technologies using Robot Framework, React Testing Library, and additional tools. The goal is to showcase:
 
-## Teknologiat
+- REST API testing
+- Frontend component testing
+- Python unit tests
+- Performance testing with JMeter
+- GitHub Actions for continuous integration
 
-- Robot Framework
-  - RequestsLibrary (API-testit)
-- React Testing Library + Jest (frontend-yksikkötesti)
-- GitHub Actions (CI)
+## Technologies
 
-## Testien suorittaminen
+- **Robot Framework** for automated tests
+  - **RequestsLibrary** for API tests
+  - **DatabaseLibrary** for database tests (if needed)
+- **React Testing Library** and **Jest** for frontend unit tests
+- **GitHub Actions** for CI workflows
+- **JMeter** for performance testing
 
-### 1. API-testit (Robot Framework)
+## Test Execution
+
+### 1. API Tests (Robot Framework)
 
 ```bash
 pip install -r requirements.txt
 robot tests/api/reqres_user_tests.robot
 ```
 
-### 2. Frontend-testit (React)
+### 2. Frontend Tests (React)
 
 ```bash
 cd frontend-tests
@@ -26,21 +34,47 @@ npm install
 npm test
 ```
 
-## Testattavat kohteet
+### 3. Python Unit Tests
 
-### API: [reqres.in](https://reqres.in)
+```bash
+cd python-tests
+pytest
+```
 
+### 4. JMeter Performance Tests
+
+```bash
+cd robotframework-qa-demo
+jmeter -n -t tests/performance/reqres_api_test.jmx -l results.jtl -e -o tests/performance/html-report
+```
+
+## Tested Targets
+
+### API (reqres.in)
 - GET /users
 - POST /users
 
-### Frontend-komponentti
+### Frontend Component
+A React component that renders a greeting for a given name.
 
-React-komponentti joka renderöi tervehdyksen annetulle nimelle.
+### CI Workflows
 
-## Tavoite
+The project includes GitHub Actions workflows that run:
+- **API Tests**
+- **React unit tests**
+- **Python Unit Tests**
+- **JMeter Performance Tests**
 
-Projekti simuloi käytännön tilannetta, jossa testataan:
+Each step is triggered on push or pull request, ensuring consistent automated verification.
 
-- REST-rajapintoja
-- Frontend-komponentteja
-- Käytetään hyviä käytäntöjä, kuten eriytetty rakenne ja CI-testit
+## Purpose
+
+This repository simulates a practical scenario where multiple aspects of an application are tested:
+
+- **REST APIs** with Robot Framework RequestsLibrary
+- **Frontend components** with React Testing Library
+- **Python scripts** with pytest
+- **Performance** with JMeter
+- **Continuous Integration** with GitHub Actions
+
+All tests are structured to demonstrate best practices in separating test types and running them automatically in CI.
