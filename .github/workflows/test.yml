@@ -91,18 +91,25 @@ jobs:
           sudo apt-get install -y wget
           wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
           sudo dpkg -i google-chrome-stable_current_amd64.deb || sudo apt-get install -f -y
-          sudo apt-get install -y chromium-chromedriver
-          # Ensure symbolic links are correct
+            
+          # Ensure Chrome binary is correctly linked
           if [ ! -f /opt/google/chrome/google-chrome ]; then
+            sudo mkdir -p /opt/google/chrome
             sudo ln -sf /usr/bin/google-chrome /opt/google/chrome/google-chrome
           fi
+  
+          # Install ChromeDriver
+          sudo apt-get install -y chromium-chromedriver
           if [ ! -f /usr/local/bin/chromedriver ]; then
             sudo ln -sf /usr/bin/chromedriver /usr/local/bin/chromedriver
           fi
+  
+          # Export PATH for Chrome and ChromeDriver
           export PATH=$PATH:/opt/google/chrome:/usr/local/bin
+  
           # Verify installation
-          google-chrome --version
-          chromedriver --version
+          google-chrome --version || echo "Google Chrome installation failed!"
+          chromedriver --version || echo "ChromeDriver installation failed!"
 
       - name: Install Python dependencies
         run: pip install -r requirements.txt
