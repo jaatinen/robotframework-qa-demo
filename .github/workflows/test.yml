@@ -72,8 +72,6 @@ jobs:
           rm -f results.jtl
       - name: Run JMeter test
         run: jmeter -n -t tests/performance/reqres_api_test.jmx -l results.jtl -e -o tests/performance/html-report
-  
-  name: Run Single Robot Framework UI Test (Chrome)
 
   run-single-robot-test:
     runs-on: ubuntu-latest
