@@ -10,5 +10,6 @@ ${BROWSER}    chrome
 *** Test Cases ***
 Python.org Website Loads
     Open Browser    https://www.python.org    ${BROWSER}    options=${OPTIONS}
-    Title Should Contain    Welcome to Python.org
+    ${title}=    Get Title
+    Should Contain    ${title}    Welcome to Python.org
     [Teardown]    Close Browser
