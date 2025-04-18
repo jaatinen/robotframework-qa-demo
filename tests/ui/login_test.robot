@@ -1,11 +1,12 @@
 *** Settings ***
-Library    SeleniumLibrary
+Library           SeleniumLibrary
 
 *** Variables ***
-${URL}    https://www.wikipedia.org
+${BROWSER}        chrome
+${OPTIONS}        --headless --no-sandbox --disable-dev-shm-usage
 
 *** Test Cases ***
 Wikipedia Page Should Load Successfully
-    Open Browser    ${URL}    firefox
+    Open Browser    https://www.wikipedia.org    ${BROWSER}    options=${OPTIONS}
     Title Should Be    Wikipedia
     [Teardown]    Close Browser
