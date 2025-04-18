@@ -49,6 +49,20 @@ jobs:
           -u "${{ secrets.JIRA_EMAIL }}:${{ secrets.JIRA_API_TOKEN }}" \
           -H "Content-Type: application/json" \
           --data '{
-            "body": "✅ Robot Framework UI testit on ajettu.\n\nTarkastele raporttia:\nhttps://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+            "body": {
+              "type": "doc",
+              "version": 1,
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "type": "text",
+                      "text": "Robot Framework UI testit on ajettu. Katso raportti: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+                    }
+                  ]
+                }
+              ]
+            }
           }' \
           https://${{ secrets.JIRA_DOMAIN }}/rest/api/3/issue/SCRUM-1/comment
