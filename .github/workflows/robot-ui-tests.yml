@@ -30,7 +30,7 @@ jobs:
     - name: Run Robot Framework UI tests
       run: |
         cd tests/ui
-        robot login_test.robot
+        robot .
 
     - name: Upload Robot Framework results
       if: always()
