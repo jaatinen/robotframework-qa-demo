@@ -1,41 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.2.2 (Python 3.13.2 on darwin)" generated="2025-04-09T20:38:04.723258" rpa="false" schemaversion="5">
+<robot generator="Robot 7.2.2 (Python 3.13.2 on darwin)" generated="2025-04-18T08:39:03.797715" rpa="false" schemaversion="5">
 <suite id="s1" name="Login Test" source="/Users/juhojaatinen/robotframework-qa-demo/tests/ui/login_test.robot">
-<test id="s1-t1" name="Wikipedia Page Should Load Successfully" line="10">
-<kw name="Set Variable" owner="BuiltIn">
-<msg time="2025-04-09T20:38:04.798454" level="INFO">${CHROME_ARGUMENTS} = --headless</msg>
-<var>${CHROME_ARGUMENTS}</var>
-<arg>--headless</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2025-04-09T20:38:04.798380" elapsed="0.000090"/>
-</kw>
+<test id="s1-t1" name="Wikipedia Page Should Load Successfully" line="8">
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2025-04-09T20:38:04.798681" level="INFO">Opening browser 'chrome' to base url 'https://www.wikipedia.org'.</msg>
+<msg time="2025-04-18T08:39:03.870599" level="INFO">Opening browser 'firefox' to base url 'https://www.wikipedia.org'.</msg>
 <arg>${URL}</arg>
-<arg>chrome</arg>
-<arg>arguments=${CHROME_ARGUMENTS}</arg>
+<arg>firefox</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2025-04-09T20:38:04.798563" elapsed="1.747576"/>
+<status status="PASS" start="2025-04-18T08:39:03.870504" elapsed="2.669842"/>
 </kw>
 <kw name="Title Should Be" owner="SeleniumLibrary">
-<msg time="2025-04-09T20:38:06.550921" level="INFO">Page title is 'Wikipedia'.</msg>
+<msg time="2025-04-18T08:39:06.543072" level="INFO">Page title is 'Wikipedia'.</msg>
 <arg>Wikipedia</arg>
 <doc>Verifies that the current page title equals ``title``.</doc>
-<status status="PASS" start="2025-04-09T20:38:06.546609" elapsed="0.004346"/>
+<status status="PASS" start="2025-04-18T08:39:06.542012" elapsed="0.001100"/>
 </kw>
-<kw name="Run Keywords" owner="BuiltIn" type="TEARDOWN">
-<kw name="Close Browser" owner="SeleniumLibrary">
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
 <doc>Closes the current browser.</doc>
-<status status="PASS" start="2025-04-09T20:38:06.551244" elapsed="0.070771"/>
+<status status="PASS" start="2025-04-18T08:39:06.543334" elapsed="0.676815"/>
 </kw>
-<arg>Close Browser</arg>
-<doc>Executes all the given keywords in a sequence.</doc>
-<status status="PASS" start="2025-04-09T20:38:06.551148" elapsed="0.070957"/>
-</kw>
-<doc>Test that the Wikipedia page loads successfully in headless mode.</doc>
-<status status="PASS" start="2025-04-09T20:38:04.797944" elapsed="1.824240"/>
+<status status="PASS" start="2025-04-18T08:39:03.870123" elapsed="3.350144"/>
 </test>
-<status status="PASS" start="2025-04-09T20:38:04.723999" elapsed="1.898496"/>
+<status status="PASS" start="2025-04-18T08:39:03.798445" elapsed="3.422152"/>
 </suite>
 <statistics>
 <total>
