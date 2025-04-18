@@ -1,4 +1,3 @@
-mkdir -p .github/workflows && cat > .github/workflows/robot-ui-tests.yml << 'EOF'
 name: Robot Framework UI Tests
 
 on:
@@ -42,4 +41,3 @@ jobs:
           tests/ui/output.xml
           tests/ui/log.html
           tests/ui/report.html
-EOF
