@@ -27,10 +27,17 @@ jobs:
     - name: Install Google Chrome
       uses: browser-actions/setup-chrome@latest
 
-    - name: Run Robot Framework UI tests
+    - name: Run Robot Framework UI tests and capture result
       run: |
         cd tests/ui
-        robot .
+        robot . || echo "FAIL" > ../../test_status.txt
+        if [ ! -f ../../test_status.txt ]; then echo "PASS" > ../../test_status.txt; fi
+
+    - name: Read test result
+      id: result
+      run: |
+        STATUS=$(cat test_status.txt)
+        echo "status=$STATUS" >> $GITHUB_OUTPUT
 
     - name: Upload Robot Framework results
       if: always()
@@ -58,7 +65,7 @@ jobs:
                   "content": [
                     {
                       "type": "text",
-                      "text": "Robot Framework UI testit on ajettu. Katso raportti: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+                      "text": "🧪 Robot Framework UI testit on ajettu.\n\nTulos: ${{ steps.result.outputs.status }}\n📄 Raportti: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}"
                     }
                   ]
                 }
