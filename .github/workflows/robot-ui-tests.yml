@@ -1,0 +1,45 @@
+mkdir -p .github/workflows && cat > .github/workflows/robot-ui-tests.yml << 'EOF'
+name: Robot Framework UI Tests
+
+on:
+  push:
+    paths:
+      - 'tests/ui/**'
+  workflow_dispatch:
+
+jobs:
+  robot-ui-tests:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repo
+      uses: actions/checkout@v3
+
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.11'
+
+    - name: Install Robot Framework and Selenium dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install robotframework selenium robotframework-seleniumlibrary
+
+    - name: Install Google Chrome
+      uses: browser-actions/setup-chrome@latest
+
+    - name: Run Robot Framework UI tests
+      run: |
+        cd tests/ui
+        robot login_test.robot
+
+    - name: Upload Robot Framework results
+      if: always()
+      uses: actions/upload-artifact@v4
+      with:
+        name: robot-ui-test-results
+        path: |
+          tests/ui/output.xml
+          tests/ui/log.html
+          tests/ui/report.html
+EOF
