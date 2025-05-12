@@ -3,6 +3,7 @@
 This is a short demo project illustrating how to work with key testing technologies using Robot Framework, React Testing Library, and additional tools. The goal is to showcase:
 
 - REST API testing
+- FHIR REST API
 - Frontend component testing
 - Python unit tests
 - Performance testing with JMeter
@@ -48,11 +49,18 @@ cd robotframework-qa-demo
 jmeter -n -t tests/performance/reqres_api_test.jmx -l results.jtl -e -o tests/performance/html-report
 ```
 
+### 5. FHIR Appointment Tests (Robot Framework)
+
+```bash
+pip install -r requirements.txt
+robot fhir.robot
+
 ## Tested Targets
 
-### API (reqres.in)
+### API (reqres.in, JSONPlaceholder)
 - GET /users
-- POST /users
+- POST
+- DELETE
 
 ### Frontend Component
 A React component that renders a greeting for a given name.

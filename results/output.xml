@@ -1,32 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.2.2 (Python 3.13.2 on darwin)" generated="2025-05-12T13:53:51.469338" rpa="false" schemaversion="5">
+<robot generator="Robot 7.2.2 (Python 3.13.2 on darwin)" generated="2025-05-12T14:54:48.501674" rpa="false" schemaversion="5">
 <suite id="s1" name="Robotframework-Qa-Demo" source="/Users/juhojaatinen/robotframework-qa-demo">
 <suite id="s1-s1" name="Fhir" source="/Users/juhojaatinen/robotframework-qa-demo/fhir.robot">
 <test id="s1-s1-t1" name="Validate FHIR Appointment Resource" line="10">
 <kw name="Create Session" owner="RequestsLibrary">
-<msg time="2025-05-12T13:53:51.508796" level="INFO">Creating Session using : alias=fhir, url=https://fhir.simplifier.net/R4, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<msg time="2025-05-12T14:54:48.567495" level="INFO">Creating Session using : alias=fhir, url=https://fhir.simplifier.net/R4, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
 <arg>fhir</arg>
 <arg>${FHIR_BASE}</arg>
 <arg>verify=False</arg>
 <doc>Create Session: create a HTTP session to a server</doc>
-<status status="PASS" start="2025-05-12T13:53:51.508702" elapsed="0.000168"/>
+<status status="PASS" start="2025-05-12T14:54:48.567394" elapsed="0.000178"/>
 </kw>
 <kw name="Create Dictionary" owner="BuiltIn">
-<msg time="2025-05-12T13:53:51.509053" level="INFO">${hdrs} = {'Accept': 'application/fhir+json'}</msg>
+<msg time="2025-05-12T14:54:48.567762" level="INFO">${hdrs} = {'Accept': 'application/fhir+json'}</msg>
 <var>${hdrs}</var>
 <arg>Accept=application/fhir+json</arg>
 <doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<status status="PASS" start="2025-05-12T13:53:51.508953" elapsed="0.000114"/>
+<status status="PASS" start="2025-05-12T14:54:48.567654" elapsed="0.000119"/>
 </kw>
 <kw name="GET On Session" owner="RequestsLibrary">
-<msg time="2025-05-12T13:53:51.913066" level="INFO">GET Request : url=https://fhir.simplifier.net/R4/Appointment/f7bf2300-912c-4dd0-ae92-84ab50396dbe 
+<msg time="2025-05-12T14:54:49.128525" level="INFO">GET Request : url=https://fhir.simplifier.net/R4/Appointment/f7bf2300-912c-4dd0-ae92-84ab50396dbe 
  path_url=/R4/Appointment/f7bf2300-912c-4dd0-ae92-84ab50396dbe 
  headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': 'application/fhir+json', 'Connection': 'keep-alive'} 
  body=None 
  </msg>
-<msg time="2025-05-12T13:53:51.913463" level="INFO">GET Response : url=https://fhir.simplifier.net/R4/Appointment/f7bf2300-912c-4dd0-ae92-84ab50396dbe 
+<msg time="2025-05-12T14:54:49.128824" level="INFO">GET Response : url=https://fhir.simplifier.net/R4/Appointment/f7bf2300-912c-4dd0-ae92-84ab50396dbe 
  status=200, reason=OK 
- headers={'Content-Length': '4277', 'Content-Type': 'application/fhir+json; charset=utf-8', 'Date': 'Mon, 12 May 2025 10:53:51 GMT', 'Server': 'Microsoft-IIS/10.0', 'ETag': 'W/"1"', 'Last-Modified': 'Thu, 17 Apr 2025 05:50:14 GMT', 'Location': 'https://fhir.simplifier.net/R4/Appointment/f7bf2300-912c-4dd0-ae92-84ab50396dbe/_history/1', 'Set-Cookie': 'ARRAffinity=76fd3b268e3639ef5cc726b99114e20afacd63341ee4df2a9e89cb8ea1f3ed4a;Path=/;HttpOnly;Secure;Domain=fhir.simplifier.net, ARRAffinitySameSite=76fd3b268e3639ef5cc726b99114e20afacd63341ee4df2a9e89cb8ea1f3ed4a;Path=/;HttpOnly;SameSite=None;Secure;Domain=fhir.simplifier.net', 'Request-Context': 'appId=cid-v1:1f2583d5-0901-4603-9e51-55bfcc1ec83d', 'X-Powered-By': 'ASP.NET', 'Content-Security-Policy': "script-src 'self' https://*.google.com https://js.monitor.azure.com https://www.googleapis.com https://www.googletagmanager.com https://www.google-analytics.com https://*.msecnd.net 'unsafe-inline' 'unsafe-eval'; object-src 'none';", 'X-XSS-Protection': '1; mode=block', 'X-Content-Type-Options': 'nosniff'} 
+ headers={'Content-Length': '4277', 'Content-Type': 'application/fhir+json; charset=utf-8', 'Date': 'Mon, 12 May 2025 11:54:49 GMT', 'Server': 'Microsoft-IIS/10.0', 'ETag': 'W/"1"', 'Last-Modified': 'Thu, 17 Apr 2025 05:50:14 GMT', 'Location': 'https://fhir.simplifier.net/R4/Appointment/f7bf2300-912c-4dd0-ae92-84ab50396dbe/_history/1', 'Set-Cookie': 'ARRAffinity=76fd3b268e3639ef5cc726b99114e20afacd63341ee4df2a9e89cb8ea1f3ed4a;Path=/;HttpOnly;Secure;Domain=fhir.simplifier.net, ARRAffinitySameSite=76fd3b268e3639ef5cc726b99114e20afacd63341ee4df2a9e89cb8ea1f3ed4a;Path=/;HttpOnly;SameSite=None;Secure;Domain=fhir.simplifier.net', 'Request-Context': 'appId=cid-v1:1f2583d5-0901-4603-9e51-55bfcc1ec83d', 'X-Powered-By': 'ASP.NET', 'Content-Security-Policy': "script-src 'self' https://*.google.com https://js.monitor.azure.com https://www.googleapis.com https://www.googletagmanager.com https://www.google-analytics.com https://*.msecnd.net 'unsafe-inline' 'unsafe-eval'; object-src 'none';", 'X-XSS-Protection': '1; mode=block', 'X-Content-Type-Options': 'nosniff'} 
  body={
   "resourceType": "Appointment",
   "meta": {
@@ -175,293 +175,434 @@
   "id": "f7bf2300-912c-4dd0-ae92-84ab50396dbe"
 } 
  </msg>
-<msg time="2025-05-12T13:53:51.913735" level="INFO">/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'fhir.simplifier.net'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+<msg time="2025-05-12T14:54:49.129162" level="INFO">/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'fhir.simplifier.net'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
   warnings.warn(</msg>
-<msg time="2025-05-12T13:53:51.914013" level="INFO">${resp} = &lt;Response [200]&gt;</msg>
+<msg time="2025-05-12T14:54:49.129509" level="INFO">${resp} = &lt;Response [200]&gt;</msg>
 <var>${resp}</var>
 <arg>fhir</arg>
 <arg>/Appointment/${APPT_ID}</arg>
 <arg>headers=${hdrs}</arg>
 <doc>Sends a GET request on a previously created HTTP Session.</doc>
-<status status="PASS" start="2025-05-12T13:53:51.509119" elapsed="0.404930"/>
+<status status="PASS" start="2025-05-12T14:54:48.567823" elapsed="0.561749"/>
 </kw>
 <kw name="Status Should Be" owner="RequestsLibrary">
 <arg>200</arg>
 <arg>${resp}</arg>
 <doc>Fails if response status code is different than the expected.</doc>
-<status status="PASS" start="2025-05-12T13:53:51.914486" elapsed="0.000583"/>
+<status status="PASS" start="2025-05-12T14:54:49.129972" elapsed="0.000481"/>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2025-05-12T13:53:51.916718" level="INFO">${json} = {'resourceType': 'Appointment', 'meta': {'profile': ['https://pta.kanta.fi/fhir/StructureDefinition/AppointmentAppointment'], 'security': [{'system': 'https://pta.kanta.fi/fhir/CodeSystem/fipta-cs-vis...</msg>
+<msg time="2025-05-12T14:54:49.131723" level="INFO">${json} = {'resourceType': 'Appointment', 'meta': {'profile': ['https://pta.kanta.fi/fhir/StructureDefinition/AppointmentAppointment'], 'security': [{'system': 'https://pta.kanta.fi/fhir/CodeSystem/fipta-cs-vis...</msg>
 <var>${json}</var>
 <arg>${resp.json()}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2025-05-12T13:53:51.915480" elapsed="0.001277"/>
+<status status="PASS" start="2025-05-12T14:54:49.130837" elapsed="0.000918"/>
 </kw>
 <kw name="Should Be Equal" owner="BuiltIn">
 <arg>${json['resourceType']}</arg>
 <arg>Appointment</arg>
 <doc>Fails if the given objects are unequal.</doc>
-<status status="PASS" start="2025-05-12T13:53:51.916979" elapsed="0.000610"/>
+<status status="PASS" start="2025-05-12T14:54:49.131935" elapsed="0.000629"/>
 </kw>
 <kw name="Should Be Equal" owner="BuiltIn">
 <arg>${json['id']}</arg>
 <arg>${APPT_ID}</arg>
 <doc>Fails if the given objects are unequal.</doc>
-<status status="PASS" start="2025-05-12T13:53:51.917758" elapsed="0.000544"/>
+<status status="PASS" start="2025-05-12T14:54:49.132770" elapsed="0.000553"/>
 </kw>
 <kw name="Should Be Equal" owner="BuiltIn">
 <arg>${json['status']}</arg>
 <arg>booked</arg>
 <doc>Fails if the given objects are unequal.</doc>
-<status status="PASS" start="2025-05-12T13:53:51.918459" elapsed="0.000418"/>
+<status status="PASS" start="2025-05-12T14:54:49.133496" elapsed="0.000981"/>
 </kw>
 <kw name="Get From List" owner="Collections">
-<msg time="2025-05-12T13:53:51.919396" level="INFO">${first} = {'resourceType': 'Patient', 'id': 'PAT1', 'meta': {'profile': ['https://pta.kanta.fi/fhir/StructureDefinition/AppointmentPatient']}, 'identifier': [{'use': 'official', 'system': 'urn:oid:1.2.246.21', ...</msg>
+<msg time="2025-05-12T14:54:49.135161" level="INFO">${first} = {'resourceType': 'Patient', 'id': 'PAT1', 'meta': {'profile': ['https://pta.kanta.fi/fhir/StructureDefinition/AppointmentPatient']}, 'identifier': [{'use': 'official', 'system': 'urn:oid:1.2.246.21', ...</msg>
 <var>${first}</var>
 <arg>${json['contained']}</arg>
 <arg>0</arg>
 <doc>Returns the value specified with an ``index`` from ``list``.</doc>
-<status status="PASS" start="2025-05-12T13:53:51.919015" elapsed="0.000406"/>
+<status status="PASS" start="2025-05-12T14:54:49.134669" elapsed="0.000525"/>
 </kw>
 <kw name="Get From List" owner="Collections">
-<msg time="2025-05-12T13:53:51.919933" level="INFO">${ident0} = {'use': 'official', 'system': 'urn:oid:1.2.246.21', 'value': '300111A9001'}</msg>
+<msg time="2025-05-12T14:54:49.135851" level="INFO">${ident0} = {'use': 'official', 'system': 'urn:oid:1.2.246.21', 'value': '300111A9001'}</msg>
 <var>${ident0}</var>
 <arg>${first['identifier']}</arg>
 <arg>0</arg>
 <doc>Returns the value specified with an ``index`` from ``list``.</doc>
-<status status="PASS" start="2025-05-12T13:53:51.919581" elapsed="0.000376"/>
+<status status="PASS" start="2025-05-12T14:54:49.135387" elapsed="0.000490"/>
 </kw>
 <kw name="Should Be Equal" owner="BuiltIn">
 <arg>${ident0['value']}</arg>
 <arg>300111A9001</arg>
 <doc>Fails if the given objects are unequal.</doc>
-<status status="PASS" start="2025-05-12T13:53:51.920084" elapsed="0.000393"/>
+<status status="PASS" start="2025-05-12T14:54:49.136019" elapsed="0.000426"/>
 </kw>
 <kw name="Get From List" owner="Collections">
-<msg time="2025-05-12T13:53:51.920970" level="INFO">${second} = {'type': [{'coding': [{'system': 'https://pta.kanta.fi/fhir/CodeSystem/fipta-cs-appointmenttypecategory', 'code': '2', 'display': 'Terveydenhuollon palvelu, johon ajanvaraus kohdistuu'}]}], 'actor': {...</msg>
+<msg time="2025-05-12T14:54:49.136986" level="INFO">${second} = {'type': [{'coding': [{'system': 'https://pta.kanta.fi/fhir/CodeSystem/fipta-cs-appointmenttypecategory', 'code': '2', 'display': 'Terveydenhuollon palvelu, johon ajanvaraus kohdistuu'}]}], 'actor': {...</msg>
 <var>${second}</var>
 <arg>${json['participant']}</arg>
 <arg>1</arg>
 <doc>Returns the value specified with an ``index`` from ``list``.</doc>
-<status status="PASS" start="2025-05-12T13:53:51.920613" elapsed="0.000380"/>
+<status status="PASS" start="2025-05-12T14:54:49.136577" elapsed="0.000434"/>
 </kw>
 <kw name="Get From List" owner="Collections">
-<msg time="2025-05-12T13:53:51.921454" level="INFO">${coding} = {'system': 'https://pta.kanta.fi/fhir/CodeSystem/fipta-cs-appointmenttypecategory', 'code': '2', 'display': 'Terveydenhuollon palvelu, johon ajanvaraus kohdistuu'}</msg>
+<msg time="2025-05-12T14:54:49.137537" level="INFO">${coding} = {'system': 'https://pta.kanta.fi/fhir/CodeSystem/fipta-cs-appointmenttypecategory', 'code': '2', 'display': 'Terveydenhuollon palvelu, johon ajanvaraus kohdistuu'}</msg>
 <var>${coding}</var>
 <arg>${second['type'][0]['coding']}</arg>
 <arg>0</arg>
 <doc>Returns the value specified with an ``index`` from ``list``.</doc>
-<status status="PASS" start="2025-05-12T13:53:51.921110" elapsed="0.000366"/>
+<status status="PASS" start="2025-05-12T14:54:49.137151" elapsed="0.000411"/>
 </kw>
 <kw name="Should Be Equal" owner="BuiltIn">
 <arg>${coding['code']}</arg>
 <arg>2</arg>
 <doc>Fails if the given objects are unequal.</doc>
-<status status="PASS" start="2025-05-12T13:53:51.921595" elapsed="0.000386"/>
+<status status="PASS" start="2025-05-12T14:54:49.137850" elapsed="0.000512"/>
 </kw>
 <kw name="Should Match Regexp" owner="BuiltIn">
 <arg>${json['start']}</arg>
 <arg>2023-06-10T\\d{2}:\\d{2}:\\d{2}\\+00:00</arg>
 <doc>Fails if ``string`` does not match ``pattern`` as a regular expression.</doc>
-<status status="PASS" start="2025-05-12T13:53:51.922101" elapsed="0.000571"/>
+<status status="PASS" start="2025-05-12T14:54:49.138506" elapsed="0.000601"/>
 </kw>
 <doc>Hae Appointment-resurssi ja tarkista keskeiset kentät JSON-vastauksesta</doc>
-<status status="PASS" start="2025-05-12T13:53:51.508353" elapsed="0.414507"/>
+<status status="PASS" start="2025-05-12T14:54:48.567013" elapsed="0.572368"/>
 </test>
-<status status="PASS" start="2025-05-12T13:53:51.478010" elapsed="0.445324"/>
+<status status="PASS" start="2025-05-12T14:54:48.514079" elapsed="0.625907"/>
 </suite>
 <suite id="s1-s2" name="Login Test2" source="/Users/juhojaatinen/robotframework-qa-demo/login_test2.robot">
 <test id="s1-s2-t1" name="Wikipedia Page Should Load Successfully" line="8">
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2025-05-12T13:53:51.978149" level="INFO">Opening browser 'chrome' to base url 'https://www.wikipedia.org'.</msg>
-<msg time="2025-05-12T13:53:52.068931" level="WARN">The chromedriver version (135.0.7049.84) detected in PATH at /opt/homebrew/bin/chromedriver might not be compatible with the detected chrome version (136.0.7103.93); currently, chromedriver 136.0.7103.92 is recommended for chrome 136.*, so it is advised to delete the driver in PATH and retry</msg>
+<msg time="2025-05-12T14:54:49.209009" level="INFO">Opening browser 'chrome' to base url 'https://www.wikipedia.org'.</msg>
+<msg time="2025-05-12T14:54:49.512728" level="WARN">The chromedriver version (135.0.7049.84) detected in PATH at /opt/homebrew/bin/chromedriver might not be compatible with the detected chrome version (136.0.7103.93); currently, chromedriver 136.0.7103.92 is recommended for chrome 136.*, so it is advised to delete the driver in PATH and retry</msg>
 <arg>${URL}</arg>
 <arg>chrome</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2025-05-12T13:53:51.978041" elapsed="1.122010"/>
+<status status="PASS" start="2025-05-12T14:54:49.208913" elapsed="1.782389"/>
 </kw>
 <kw name="Title Should Be" owner="SeleniumLibrary">
-<msg time="2025-05-12T13:53:53.102985" level="INFO">Page title is 'Wikipedia'.</msg>
+<msg time="2025-05-12T14:54:50.994468" level="INFO">Page title is 'Wikipedia'.</msg>
 <arg>Wikipedia</arg>
 <doc>Verifies that the current page title equals ``title``.</doc>
-<status status="PASS" start="2025-05-12T13:53:53.100547" elapsed="0.002490"/>
+<status status="PASS" start="2025-05-12T14:54:50.991623" elapsed="0.002912"/>
 </kw>
 <kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
 <doc>Closes the current browser.</doc>
-<status status="PASS" start="2025-05-12T13:53:53.103318" elapsed="0.071545"/>
+<status status="PASS" start="2025-05-12T14:54:50.994839" elapsed="0.069451"/>
 </kw>
-<status status="PASS" start="2025-05-12T13:53:51.977751" elapsed="1.197197"/>
+<status status="PASS" start="2025-05-12T14:54:49.208641" elapsed="1.855720"/>
 </test>
-<status status="PASS" start="2025-05-12T13:53:51.923792" elapsed="1.251369"/>
+<status status="PASS" start="2025-05-12T14:54:49.140504" elapsed="1.924069"/>
 </suite>
 <suite id="s1-s3" name="Tests" source="/Users/juhojaatinen/robotframework-qa-demo/tests">
 <suite id="s1-s3-s1" name="Api" source="/Users/juhojaatinen/robotframework-qa-demo/tests/api">
-<suite id="s1-s3-s1-s1" name="Reqres User Tests" source="/Users/juhojaatinen/robotframework-qa-demo/tests/api/reqres_user_tests.robot">
-<kw name="Setup Reqres Session" type="SETUP">
+<suite id="s1-s3-s1-s1" name="Reqres Add" source="/Users/juhojaatinen/robotframework-qa-demo/tests/api/reqres_add.robot">
+<kw name="Setup JSONPlaceholder Session" type="SETUP">
 <kw name="Delete All Sessions" owner="RequestsLibrary">
-<msg time="2025-05-12T13:53:53.177043" level="INFO">Deleting All Sessions</msg>
+<msg time="2025-05-12T14:54:51.066237" level="INFO">Deleting All Sessions</msg>
 <doc>Removes all the session objects</doc>
-<status status="PASS" start="2025-05-12T13:53:53.177010" elapsed="0.000085"/>
+<status status="PASS" start="2025-05-12T14:54:51.066205" elapsed="0.000080"/>
 </kw>
 <kw name="Create Session" owner="RequestsLibrary">
-<msg time="2025-05-12T13:53:53.177231" level="INFO">Creating Session using : alias=reqres, url=https://reqres.in, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<msg time="2025-05-12T14:54:51.066410" level="INFO">Creating Session using : alias=json, url=https://jsonplaceholder.typicode.com, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<arg>json</arg>
+<arg>${BASE_URL}</arg>
+<arg>verify=False</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2025-05-12T14:54:51.066324" elapsed="0.000168"/>
+</kw>
+<status status="PASS" start="2025-05-12T14:54:51.066129" elapsed="0.000387"/>
+</kw>
+<test id="s1-s3-s1-s1-t1" name="POST New Post Should Return 201 And Have Id" line="18">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-05-12T14:54:51.067065" level="INFO">${payload} = {'title': 'foo', 'body': 'bar', 'userId': '1'}</msg>
+<var>${payload}</var>
+<arg>title=foo</arg>
+<arg>body=bar</arg>
+<arg>userId=1</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-05-12T14:54:51.066957" elapsed="0.000119"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-05-12T14:54:51.067185" level="INFO">${headers} = {'Content-Type': 'application/json'}</msg>
+<var>${headers}</var>
+<arg>Content-Type=application/json</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-05-12T14:54:51.067132" elapsed="0.000061"/>
+</kw>
+<kw name="POST On Session" owner="RequestsLibrary">
+<msg time="2025-05-12T14:54:51.301946" level="INFO">POST Request : url=https://jsonplaceholder.typicode.com/posts 
+ path_url=/posts 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Content-Length': '46'} 
+ body=b'{"title": "foo", "body": "bar", "userId": "1"}' 
+ </msg>
+<msg time="2025-05-12T14:54:51.302614" level="INFO">POST Response : url=https://jsonplaceholder.typicode.com/posts 
+ status=201, reason=Created 
+ headers={'Date': 'Mon, 12 May 2025 11:54:51 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '67', 'Connection': 'keep-alive', 'Server': 'cloudflare', 'Report-To': '{"group":"heroku-nel","max_age":3600,"endpoints":[{"url":"https://nel.heroku.com/reports?ts=1747050891&amp;sid=e11707d5-02a7-43ef-b45e-2cf4d2036f7d&amp;s=RWvkuXPf6SyYwNWSXm1yT3z7cqTvOtAF6Iv9cGYZjjY%3D"}]}', 'Reporting-Endpoints': 'heroku-nel=https://nel.heroku.com/reports?ts=1747050891&amp;sid=e11707d5-02a7-43ef-b45e-2cf4d2036f7d&amp;s=RWvkuXPf6SyYwNWSXm1yT3z7cqTvOtAF6Iv9cGYZjjY%3D', 'Nel': '{"report_to":"heroku-nel","max_age":3600,"success_fraction":0.005,"failure_fraction":0.05,"response_headers":["Via"]}', 'X-Powered-By': 'Express', 'X-Ratelimit-Limit': '1000', 'X-Ratelimit-Remaining': '999', 'X-Ratelimit-Reset': '1747050939', 'Vary': 'Origin, X-HTTP-Method-Override, Accept-Encoding', 'Access-Control-Allow-Credentials': 'true', 'Cache-Control': 'no-cache', 'Pragma': 'no-cache', 'Expires': '-1', 'Access-Control-Expose-Headers': 'Location', 'Location': 'https://jsonplaceholder.typicode.com/posts/101', 'X-Content-Type-Options': 'nosniff', 'Etag': 'W/"43-e0UvNeXth+6+06UFNnGIVUOlAcw"', 'Via': '1.1 vegur', 'Cf-Cache-Status': 'DYNAMIC', 'CF-RAY': '93e9b945faac8fe0-FRA', 'alt-svc': 'h3=":443"; ma=86400'} 
+ body={
+  "title": "foo",
+  "body": "bar",
+  "userId": "1",
+  "id": 101
+} 
+ </msg>
+<msg time="2025-05-12T14:54:51.306969" level="INFO">/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'jsonplaceholder.typicode.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(</msg>
+<msg time="2025-05-12T14:54:51.307528" level="INFO">${resp} = &lt;Response [201]&gt;</msg>
+<var>${resp}</var>
+<arg>json</arg>
+<arg>/posts</arg>
+<arg>json=${payload}</arg>
+<arg>headers=${headers}</arg>
+<doc>Sends a POST request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2025-05-12T14:54:51.067236" elapsed="0.240348"/>
+</kw>
+<kw name="Should Be Equal As Integers" owner="BuiltIn">
+<msg time="2025-05-12T14:54:51.308984" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${resp.status_code}</arg>
+<arg>201</arg>
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<status status="PASS" start="2025-05-12T14:54:51.308067" elapsed="0.001025"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-05-12T14:54:51.310037" level="INFO">${json} = {'title': 'foo', 'body': 'bar', 'userId': '1', 'id': 101}</msg>
+<var>${json}</var>
+<arg>${resp.json()}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-05-12T14:54:51.309340" elapsed="0.000727"/>
+</kw>
+<kw name="Dictionary Should Contain Key" owner="Collections">
+<arg>${json}</arg>
+<arg>id</arg>
+<doc>Fails if ``key`` is not found from ``dictionary``.</doc>
+<status status="PASS" start="2025-05-12T14:54:51.310265" elapsed="0.000212"/>
+</kw>
+<doc>POST /posts → 201 Created ja vastaus sisältää id-kentän</doc>
+<status status="PASS" start="2025-05-12T14:54:51.066751" elapsed="0.244008"/>
+</test>
+<test id="s1-s3-s1-s1-t2" name="DELETE Post 1 Should Return 200 And Empty Json" line="29">
+<kw name="DELETE On Session" owner="RequestsLibrary">
+<msg time="2025-05-12T14:54:51.450214" level="INFO">DELETE Request : url=https://jsonplaceholder.typicode.com/posts/1 
+ path_url=/posts/1 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '0'} 
+ body=None 
+ </msg>
+<msg time="2025-05-12T14:54:51.450469" level="INFO">DELETE Response : url=https://jsonplaceholder.typicode.com/posts/1 
+ status=200, reason=OK 
+ headers={'Date': 'Mon, 12 May 2025 11:54:51 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Server': 'cloudflare', 'Report-To': '{"group":"heroku-nel","max_age":3600,"endpoints":[{"url":"https://nel.heroku.com/reports?ts=1747050891&amp;sid=e11707d5-02a7-43ef-b45e-2cf4d2036f7d&amp;s=RWvkuXPf6SyYwNWSXm1yT3z7cqTvOtAF6Iv9cGYZjjY%3D"}]}', 'Reporting-Endpoints': 'heroku-nel=https://nel.heroku.com/reports?ts=1747050891&amp;sid=e11707d5-02a7-43ef-b45e-2cf4d2036f7d&amp;s=RWvkuXPf6SyYwNWSXm1yT3z7cqTvOtAF6Iv9cGYZjjY%3D', 'Nel': '{"report_to":"heroku-nel","max_age":3600,"success_fraction":0.005,"failure_fraction":0.05,"response_headers":["Via"]}', 'X-Powered-By': 'Express', 'X-Ratelimit-Limit': '1000', 'X-Ratelimit-Remaining': '998', 'X-Ratelimit-Reset': '1747050939', 'Vary': 'Origin, Accept-Encoding', 'Access-Control-Allow-Credentials': 'true', 'Cache-Control': 'no-cache', 'Pragma': 'no-cache', 'Expires': '-1', 'X-Content-Type-Options': 'nosniff', 'Etag': 'W/"2-vyGp6PvFo4RvsFtPoIWeCReyIC8"', 'Via': '1.1 vegur', 'Cf-Cache-Status': 'DYNAMIC', 'Content-Encoding': 'gzip', 'CF-RAY': '93e9b946eb2b8fe0-FRA', 'alt-svc': 'h3=":443"; ma=86400'} 
+ body={} 
+ </msg>
+<msg time="2025-05-12T14:54:51.450641" level="INFO">/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'jsonplaceholder.typicode.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(</msg>
+<msg time="2025-05-12T14:54:51.450936" level="INFO">${resp2} = &lt;Response [200]&gt;</msg>
+<var>${resp2}</var>
+<arg>json</arg>
+<arg>/posts/1</arg>
+<doc>Sends a DELETE request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2025-05-12T14:54:51.311636" elapsed="0.139363"/>
+</kw>
+<kw name="Should Be Equal As Integers" owner="BuiltIn">
+<msg time="2025-05-12T14:54:51.452501" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${resp2.status_code}</arg>
+<arg>200</arg>
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<status status="PASS" start="2025-05-12T14:54:51.451455" elapsed="0.001149"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-05-12T14:54:51.453588" level="INFO">${json2} = {}</msg>
+<var>${json2}</var>
+<arg>${resp2.json()}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-05-12T14:54:51.452881" elapsed="0.000740"/>
+</kw>
+<kw name="Should Be Empty" owner="BuiltIn">
+<msg time="2025-05-12T14:54:51.453989" level="INFO">Length is 0.</msg>
+<arg>${json2}</arg>
+<doc>Verifies that the given item is empty.</doc>
+<status status="PASS" start="2025-05-12T14:54:51.453822" elapsed="0.000221"/>
+</kw>
+<doc>DELETE /posts/1 → 200 OK ja JSON-body on tyhjä sanakirja</doc>
+<status status="PASS" start="2025-05-12T14:54:51.311087" elapsed="0.143173"/>
+</test>
+<kw name="Delete All Sessions" owner="RequestsLibrary" type="TEARDOWN">
+<msg time="2025-05-12T14:54:51.454845" level="INFO">Deleting All Sessions</msg>
+<doc>Removes all the session objects</doc>
+<status status="PASS" start="2025-05-12T14:54:51.454760" elapsed="0.000178"/>
+</kw>
+<doc>JSONPlaceholder (POST ja DELETE)</doc>
+<status status="PASS" start="2025-05-12T14:54:51.065574" elapsed="0.389397"/>
+</suite>
+<suite id="s1-s3-s1-s2" name="Reqres User Tests" source="/Users/juhojaatinen/robotframework-qa-demo/tests/api/reqres_user_tests.robot">
+<kw name="Setup Reqres Session" type="SETUP">
+<kw name="Delete All Sessions" owner="RequestsLibrary">
+<msg time="2025-05-12T14:54:51.458265" level="INFO">Deleting All Sessions</msg>
+<doc>Removes all the session objects</doc>
+<status status="PASS" start="2025-05-12T14:54:51.458198" elapsed="0.000115"/>
+</kw>
+<kw name="Create Session" owner="RequestsLibrary">
+<msg time="2025-05-12T14:54:51.458622" level="INFO">Creating Session using : alias=reqres, url=https://reqres.in, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
 <arg>reqres</arg>
 <arg>${BASE_URL}</arg>
 <arg>verify=False</arg>
 <doc>Create Session: create a HTTP session to a server</doc>
-<status status="PASS" start="2025-05-12T13:53:53.177141" elapsed="0.000176"/>
+<status status="PASS" start="2025-05-12T14:54:51.458400" elapsed="0.000553"/>
 </kw>
-<status status="PASS" start="2025-05-12T13:53:53.176912" elapsed="0.000434"/>
+<status status="PASS" start="2025-05-12T14:54:51.457982" elapsed="0.001045"/>
 </kw>
-<test id="s1-s3-s1-s1-t1" name="Get List Of Users Should Return 200" line="17">
+<test id="s1-s3-s1-s2-t1" name="Get List Of Users Should Return 200" line="17">
 <kw name="GET On Session" owner="RequestsLibrary">
-<msg time="2025-05-12T13:53:53.305356" level="INFO">GET Request : url=https://reqres.in/api/users?page=2 
+<msg time="2025-05-12T14:54:51.627888" level="INFO">GET Request : url=https://reqres.in/api/users?page=2 
  path_url=/api/users?page=2 
  headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
  body=None 
  </msg>
-<msg time="2025-05-12T13:53:53.305486" level="INFO">GET Response : url=https://reqres.in/api/users?page=2 
+<msg time="2025-05-12T14:54:51.628084" level="INFO">GET Response : url=https://reqres.in/api/users?page=2 
  status=200, reason=OK 
- headers={'Date': 'Mon, 12 May 2025 10:53:53 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Cf-Ray': '93e95ff80e788d54-HEL', 'Server': 'cloudflare', 'Content-Encoding': 'gzip', 'Report-To': '{"group":"heroku-nel","max_age":3600,"endpoints":[{"url":"https://nel.heroku.com/reports?ts=1747041467&amp;sid=c4c9725f-1ab0-44d8-820f-430df2718e11&amp;s=A7SIWueGFg6mMNiDoGtCwsVptQVJ%2FHsMkirWWeCG5DU%3D"}]}', 'Reporting-Endpoints': 'heroku-nel=https://nel.heroku.com/reports?ts=1747041467&amp;sid=c4c9725f-1ab0-44d8-820f-430df2718e11&amp;s=A7SIWueGFg6mMNiDoGtCwsVptQVJ%2FHsMkirWWeCG5DU%3D', 'Nel': '{"report_to":"heroku-nel","max_age":3600,"success_fraction":0.005,"failure_fraction":0.05,"response_headers":["Via"]}', 'X-Powered-By': 'Express', 'Access-Control-Allow-Origin': '*', 'Ratelimit-Policy': '100;w=60', 'Ratelimit-Limit': '100', 'Ratelimit-Remaining': '98', 'Ratelimit-Reset': '60', 'Etag': 'W/"440-ZjsmMKR8P3usr2uJZbOCGCxC3Uw"', 'Via': '1.1 vegur', 'Cache-Control': 'max-age=14400', 'Cf-Cache-Status': 'HIT', 'Age': '5765', 'Vary': 'Accept-Encoding', 'server-timing': 'cfL4;desc="?proto=TCP&amp;rtt=4435&amp;min_rtt=4412&amp;rtt_var=1700&amp;sent=5&amp;recv=6&amp;lost=0&amp;retrans=0&amp;sent_bytes=2837&amp;recv_bytes=775&amp;delivery_rate=879895&amp;cwnd=252&amp;unsent_bytes=0&amp;cid=a8812911ae17cc62&amp;ts=99&amp;x=0"'} 
+ headers={'Date': 'Mon, 12 May 2025 11:54:51 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Cf-Ray': '93e9b94899f7fb7f-AMS', 'Server': 'cloudflare', 'Content-Encoding': 'gzip', 'Report-To': '{"group":"heroku-nel","max_age":3600,"endpoints":[{"url":"https://nel.heroku.com/reports?ts=1747049264&amp;sid=c4c9725f-1ab0-44d8-820f-430df2718e11&amp;s=HYRKJCMLpCEwRlXo%2F1XGAYTP0brptso%2Fo2FSRh1ZQuw%3D"}]}', 'Reporting-Endpoints': 'heroku-nel=https://nel.heroku.com/reports?ts=1747049264&amp;sid=c4c9725f-1ab0-44d8-820f-430df2718e11&amp;s=HYRKJCMLpCEwRlXo%2F1XGAYTP0brptso%2Fo2FSRh1ZQuw%3D', 'Nel': '{"report_to":"heroku-nel","max_age":3600,"success_fraction":0.005,"failure_fraction":0.05,"response_headers":["Via"]}', 'X-Powered-By': 'Express', 'Access-Control-Allow-Origin': '*', 'Ratelimit-Policy': '100;w=60', 'Ratelimit-Limit': '100', 'Ratelimit-Remaining': '98', 'Ratelimit-Reset': '60', 'Etag': 'W/"440-ZjsmMKR8P3usr2uJZbOCGCxC3Uw"', 'Via': '1.1 vegur', 'Cache-Control': 'max-age=14400', 'Cf-Cache-Status': 'HIT', 'Age': '1627', 'Vary': 'Accept-Encoding', 'server-timing': 'cfL4;desc="?proto=TCP&amp;rtt=33466&amp;min_rtt=33274&amp;rtt_var=12615&amp;sent=5&amp;recv=6&amp;lost=0&amp;retrans=0&amp;sent_bytes=2836&amp;recv_bytes=775&amp;delivery_rate=121536&amp;cwnd=253&amp;unsent_bytes=0&amp;cid=c3bf8cf4ac182859&amp;ts=54&amp;x=0"'} 
  body={"page":2,"per_page":6,"total":12,"total_pages":2,"data":[{"id":7,"email":"michael.lawson@reqres.in","first_name":"Michael","last_name":"Lawson","avatar":"https://reqres.in/img/faces/7-image.jpg"},{"id":8,"email":"lindsay.ferguson@reqres.in","first_name":"Lindsay","last_name":"Ferguson","avatar":"https://reqres.in/img/faces/8-image.jpg"},{"id":9,"email":"tobias.funke@reqres.in","first_name":"Tobias","last_name":"Funke","avatar":"https://reqres.in/img/faces/9-image.jpg"},{"id":10,"email":"byron.fields@reqres.in","first_name":"Byron","last_name":"Fields","avatar":"https://reqres.in/img/faces/10-image.jpg"},{"id":11,"email":"george.edwards@reqres.in","first_name":"George","last_name":"Edwards","avatar":"https://reqres.in/img/faces/11-image.jpg"},{"id":12,"email":"rachel.howell@reqres.in","first_name":"Rachel","last_name":"Howell","avatar":"https://reqres.in/img/faces/12-image.jpg"}],"support":{"url":"https://contentcaddy.io?utm_source=reqres&amp;utm_medium=json&amp;utm_campaign=referral","text":"Tired of writing endless social media content? Let Content Caddy generate it for you."}} 
  </msg>
-<msg time="2025-05-12T13:53:53.306372" level="INFO">/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'reqres.in'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+<msg time="2025-05-12T14:54:51.628217" level="INFO">/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'reqres.in'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
   warnings.warn(</msg>
-<msg time="2025-05-12T13:53:53.306474" level="INFO">${resp} = &lt;Response [200]&gt;</msg>
+<msg time="2025-05-12T14:54:51.628435" level="INFO">${resp} = &lt;Response [200]&gt;</msg>
 <var>${resp}</var>
 <arg>reqres</arg>
 <arg>/api/users</arg>
 <arg>params=page=2</arg>
 <doc>Sends a GET request on a previously created HTTP Session.</doc>
-<status status="PASS" start="2025-05-12T13:53:53.177572" elapsed="0.128921"/>
+<status status="PASS" start="2025-05-12T14:54:51.459663" elapsed="0.168809"/>
 </kw>
 <kw name="Should Be Equal As Integers" owner="BuiltIn">
-<msg time="2025-05-12T13:53:53.306996" level="INFO">Argument types are:
+<msg time="2025-05-12T14:54:51.629535" level="INFO">Argument types are:
 &lt;class 'int'&gt;
 &lt;class 'str'&gt;</msg>
 <arg>${resp.status_code}</arg>
 <arg>200</arg>
 <doc>Fails if objects are unequal after converting them to integers.</doc>
-<status status="PASS" start="2025-05-12T13:53:53.306634" elapsed="0.000406"/>
+<status status="PASS" start="2025-05-12T14:54:51.628826" elapsed="0.000779"/>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2025-05-12T13:53:53.307425" level="INFO">${json} = {'page': 2, 'per_page': 6, 'total': 12, 'total_pages': 2, 'data': [{'id': 7, 'email': 'michael.lawson@reqres.in', 'first_name': 'Michael', 'last_name': 'Lawson', 'avatar': 'https://reqres.in/img/faces...</msg>
+<msg time="2025-05-12T14:54:51.630353" level="INFO">${json} = {'page': 2, 'per_page': 6, 'total': 12, 'total_pages': 2, 'data': [{'id': 7, 'email': 'michael.lawson@reqres.in', 'first_name': 'Michael', 'last_name': 'Lawson', 'avatar': 'https://reqres.in/img/faces...</msg>
 <var>${json}</var>
 <arg>${resp.json()}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2025-05-12T13:53:53.307134" elapsed="0.000308"/>
+<status status="PASS" start="2025-05-12T14:54:51.629794" elapsed="0.000586"/>
 </kw>
 <kw name="Should Be Equal As Integers" owner="BuiltIn">
-<msg time="2025-05-12T13:53:53.307753" level="INFO">Argument types are:
+<msg time="2025-05-12T14:54:51.630919" level="INFO">Argument types are:
 &lt;class 'int'&gt;
 &lt;class 'str'&gt;</msg>
 <arg>${json['page']}</arg>
 <arg>2</arg>
 <doc>Fails if objects are unequal after converting them to integers.</doc>
-<status status="PASS" start="2025-05-12T13:53:53.307516" elapsed="0.000269"/>
+<status status="PASS" start="2025-05-12T14:54:51.630508" elapsed="0.000460"/>
 </kw>
 <doc>GET /api/users?page=2 → 200 OK ja “page”:2 vastauksessa</doc>
-<status status="PASS" start="2025-05-12T13:53:53.177370" elapsed="0.130499"/>
+<status status="PASS" start="2025-05-12T14:54:51.459089" elapsed="0.172041"/>
 </test>
 <kw name="Delete All Sessions" owner="RequestsLibrary" type="TEARDOWN">
-<msg time="2025-05-12T13:53:53.308122" level="INFO">Deleting All Sessions</msg>
+<msg time="2025-05-12T14:54:51.631596" level="INFO">Deleting All Sessions</msg>
 <doc>Removes all the session objects</doc>
-<status status="PASS" start="2025-05-12T13:53:53.308076" elapsed="0.000085"/>
+<status status="PASS" start="2025-05-12T14:54:51.631528" elapsed="0.000152"/>
 </kw>
 <doc>Reqres.in – täydellinen CRUD‐testipaketti</doc>
-<status status="PASS" start="2025-05-12T13:53:53.176314" elapsed="0.131866"/>
+<status status="PASS" start="2025-05-12T14:54:51.455646" elapsed="0.176064"/>
 </suite>
-<status status="PASS" start="2025-05-12T13:53:53.176004" elapsed="0.132604"/>
+<status status="PASS" start="2025-05-12T14:54:51.065287" elapsed="0.567264"/>
 </suite>
 <suite id="s1-s3-s2" name="Ui" source="/Users/juhojaatinen/robotframework-qa-demo/tests/ui">
 <suite id="s1-s3-s2-s1" name="Javascript Console Check" source="/Users/juhojaatinen/robotframework-qa-demo/tests/ui/javascript_console_check.robot">
 <test id="s1-s3-s2-s1-t1" name="No JS Errors On Robot Framework Page" line="11">
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2025-05-12T13:53:53.311203" level="INFO">Opening browser 'chrome' to base url 'https://robotframework.org'.</msg>
-<msg time="2025-05-12T13:53:53.361995" level="WARN">The chromedriver version (135.0.7049.84) detected in PATH at /opt/homebrew/bin/chromedriver might not be compatible with the detected chrome version (136.0.7103.93); currently, chromedriver 136.0.7103.92 is recommended for chrome 136.*, so it is advised to delete the driver in PATH and retry</msg>
+<msg time="2025-05-12T14:54:51.637036" level="INFO">Opening browser 'chrome' to base url 'https://robotframework.org'.</msg>
+<msg time="2025-05-12T14:54:51.699851" level="WARN">The chromedriver version (135.0.7049.84) detected in PATH at /opt/homebrew/bin/chromedriver might not be compatible with the detected chrome version (136.0.7103.93); currently, chromedriver 136.0.7103.92 is recommended for chrome 136.*, so it is advised to delete the driver in PATH and retry</msg>
 <arg>https://robotframework.org</arg>
 <arg>${BROWSER}</arg>
 <arg>options=${OPTIONS}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2025-05-12T13:53:53.311031" elapsed="0.820520"/>
+<status status="PASS" start="2025-05-12T14:54:51.636661" elapsed="0.388173"/>
 </kw>
 <kw name="Execute Javascript" owner="SeleniumLibrary">
-<msg time="2025-05-12T13:53:54.132099" level="INFO">Executing JavaScript:
+<msg time="2025-05-12T14:54:52.028043" level="INFO">Executing JavaScript:
 return window.console.error || null;
 Without any arguments.</msg>
-<msg time="2025-05-12T13:53:54.133770" level="INFO">${logs} = {}</msg>
+<msg time="2025-05-12T14:54:53.431325" level="INFO">${logs} = {}</msg>
 <var>${logs}</var>
 <arg>return window.console.error || null;</arg>
 <doc>Executes the given JavaScript code with possible arguments.</doc>
-<status status="PASS" start="2025-05-12T13:53:54.131821" elapsed="0.001964"/>
+<status status="PASS" start="2025-05-12T14:54:52.026538" elapsed="1.404836"/>
 </kw>
 <kw name="Should Be Empty" owner="BuiltIn">
-<msg time="2025-05-12T13:53:54.133937" level="INFO">Length is 0.</msg>
+<msg time="2025-05-12T14:54:53.431716" level="INFO">Length is 0.</msg>
 <arg>${logs}</arg>
 <doc>Verifies that the given item is empty.</doc>
-<status status="PASS" start="2025-05-12T13:53:54.133866" elapsed="0.000089"/>
+<status status="PASS" start="2025-05-12T14:54:53.431523" elapsed="0.000224"/>
 </kw>
 <kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
 <doc>Closes the current browser.</doc>
-<status status="PASS" start="2025-05-12T13:53:54.134052" elapsed="0.077879"/>
+<status status="PASS" start="2025-05-12T14:54:53.431903" elapsed="0.077787"/>
 </kw>
-<status status="PASS" start="2025-05-12T13:53:53.310807" elapsed="0.901195"/>
+<status status="PASS" start="2025-05-12T14:54:51.636206" elapsed="1.873565"/>
 </test>
-<status status="PASS" start="2025-05-12T13:53:53.309504" elapsed="0.902695"/>
+<status status="PASS" start="2025-05-12T14:54:51.634540" elapsed="1.875425"/>
 </suite>
 <suite id="s1-s3-s2-s2" name="Login Test" source="/Users/juhojaatinen/robotframework-qa-demo/tests/ui/login_test.robot">
 <test id="s1-s3-s2-s2-t1" name="Wikipedia Page Should Load Successfully" line="5">
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2025-05-12T13:53:54.213437" level="INFO">Opening browser 'chrome' to base url 'https://www.wikipedia.org'.</msg>
-<msg time="2025-05-12T13:53:54.294813" level="WARN">The chromedriver version (135.0.7049.84) detected in PATH at /opt/homebrew/bin/chromedriver might not be compatible with the detected chrome version (136.0.7103.93); currently, chromedriver 136.0.7103.92 is recommended for chrome 136.*, so it is advised to delete the driver in PATH and retry</msg>
+<msg time="2025-05-12T14:54:53.511238" level="INFO">Opening browser 'chrome' to base url 'https://www.wikipedia.org'.</msg>
+<msg time="2025-05-12T14:54:53.584090" level="WARN">The chromedriver version (135.0.7049.84) detected in PATH at /opt/homebrew/bin/chromedriver might not be compatible with the detected chrome version (136.0.7103.93); currently, chromedriver 136.0.7103.92 is recommended for chrome 136.*, so it is advised to delete the driver in PATH and retry</msg>
 <arg>https://www.wikipedia.org</arg>
 <arg>chrome</arg>
 <arg>options=add_argument("--headless"); add_argument("--no-sandbox"); add_argument("--disable-dev-shm-usage")</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2025-05-12T13:53:54.213354" elapsed="0.609143"/>
+<status status="PASS" start="2025-05-12T14:54:53.511149" elapsed="0.656059"/>
 </kw>
 <kw name="Title Should Be" owner="SeleniumLibrary">
-<msg time="2025-05-12T13:53:54.824789" level="INFO">Page title is 'Wikipedia'.</msg>
+<msg time="2025-05-12T14:54:54.169597" level="INFO">Page title is 'Wikipedia'.</msg>
 <arg>Wikipedia</arg>
 <doc>Verifies that the current page title equals ``title``.</doc>
-<status status="PASS" start="2025-05-12T13:53:54.822820" elapsed="0.002000"/>
+<status status="PASS" start="2025-05-12T14:54:54.167583" elapsed="0.002050"/>
 </kw>
 <kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
 <doc>Closes the current browser.</doc>
-<status status="PASS" start="2025-05-12T13:53:54.824968" elapsed="0.069184"/>
+<status status="PASS" start="2025-05-12T14:54:54.169796" elapsed="0.070958"/>
 </kw>
-<status status="PASS" start="2025-05-12T13:53:54.213207" elapsed="0.681019"/>
+<status status="PASS" start="2025-05-12T14:54:53.510999" elapsed="0.729854"/>
 </test>
-<status status="PASS" start="2025-05-12T13:53:54.212423" elapsed="0.681993"/>
+<status status="PASS" start="2025-05-12T14:54:53.510216" elapsed="0.730892"/>
 </suite>
-<status status="PASS" start="2025-05-12T13:53:53.308819" elapsed="1.585831"/>
+<status status="PASS" start="2025-05-12T14:54:51.633056" elapsed="2.608343"/>
 </suite>
-<status status="PASS" start="2025-05-12T13:53:53.175366" elapsed="1.719450"/>
+<status status="PASS" start="2025-05-12T14:54:51.064755" elapsed="3.176845"/>
 </suite>
-<status status="PASS" start="2025-05-12T13:53:51.470463" elapsed="3.424519"/>
+<status status="PASS" start="2025-05-12T14:54:48.502721" elapsed="5.739085"/>
 </suite>
 <statistics>
 <total>
-<stat pass="5" fail="0" skip="0">All Tests</stat>
+<stat pass="7" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat name="Robotframework-Qa-Demo" id="s1" pass="5" fail="0" skip="0">Robotframework-Qa-Demo</stat>
+<stat name="Robotframework-Qa-Demo" id="s1" pass="7" fail="0" skip="0">Robotframework-Qa-Demo</stat>
 <stat name="Fhir" id="s1-s1" pass="1" fail="0" skip="0">Robotframework-Qa-Demo.Fhir</stat>
 <stat name="Login Test2" id="s1-s2" pass="1" fail="0" skip="0">Robotframework-Qa-Demo.Login Test2</stat>
-<stat name="Tests" id="s1-s3" pass="3" fail="0" skip="0">Robotframework-Qa-Demo.Tests</stat>
-<stat name="Api" id="s1-s3-s1" pass="1" fail="0" skip="0">Robotframework-Qa-Demo.Tests.Api</stat>
-<stat name="Reqres User Tests" id="s1-s3-s1-s1" pass="1" fail="0" skip="0">Robotframework-Qa-Demo.Tests.Api.Reqres User Tests</stat>
+<stat name="Tests" id="s1-s3" pass="5" fail="0" skip="0">Robotframework-Qa-Demo.Tests</stat>
+<stat name="Api" id="s1-s3-s1" pass="3" fail="0" skip="0">Robotframework-Qa-Demo.Tests.Api</stat>
+<stat name="Reqres Add" id="s1-s3-s1-s1" pass="2" fail="0" skip="0">Robotframework-Qa-Demo.Tests.Api.Reqres Add</stat>
+<stat name="Reqres User Tests" id="s1-s3-s1-s2" pass="1" fail="0" skip="0">Robotframework-Qa-Demo.Tests.Api.Reqres User Tests</stat>
 <stat name="Ui" id="s1-s3-s2" pass="2" fail="0" skip="0">Robotframework-Qa-Demo.Tests.Ui</stat>
 <stat name="Javascript Console Check" id="s1-s3-s2-s1" pass="1" fail="0" skip="0">Robotframework-Qa-Demo.Tests.Ui.Javascript Console Check</stat>
 <stat name="Login Test" id="s1-s3-s2-s2" pass="1" fail="0" skip="0">Robotframework-Qa-Demo.Tests.Ui.Login Test</stat>
 </suite>
 </statistics>
 <errors>
-<msg time="2025-05-12T13:53:52.068931" level="WARN">The chromedriver version (135.0.7049.84) detected in PATH at /opt/homebrew/bin/chromedriver might not be compatible with the detected chrome version (136.0.7103.93); currently, chromedriver 136.0.7103.92 is recommended for chrome 136.*, so it is advised to delete the driver in PATH and retry</msg>
-<msg time="2025-05-12T13:53:53.361995" level="WARN">The chromedriver version (135.0.7049.84) detected in PATH at /opt/homebrew/bin/chromedriver might not be compatible with the detected chrome version (136.0.7103.93); currently, chromedriver 136.0.7103.92 is recommended for chrome 136.*, so it is advised to delete the driver in PATH and retry</msg>
-<msg time="2025-05-12T13:53:54.294813" level="WARN">The chromedriver version (135.0.7049.84) detected in PATH at /opt/homebrew/bin/chromedriver might not be compatible with the detected chrome version (136.0.7103.93); currently, chromedriver 136.0.7103.92 is recommended for chrome 136.*, so it is advised to delete the driver in PATH and retry</msg>
+<msg time="2025-05-12T14:54:49.512728" level="WARN">The chromedriver version (135.0.7049.84) detected in PATH at /opt/homebrew/bin/chromedriver might not be compatible with the detected chrome version (136.0.7103.93); currently, chromedriver 136.0.7103.92 is recommended for chrome 136.*, so it is advised to delete the driver in PATH and retry</msg>
+<msg time="2025-05-12T14:54:51.699851" level="WARN">The chromedriver version (135.0.7049.84) detected in PATH at /opt/homebrew/bin/chromedriver might not be compatible with the detected chrome version (136.0.7103.93); currently, chromedriver 136.0.7103.92 is recommended for chrome 136.*, so it is advised to delete the driver in PATH and retry</msg>
+<msg time="2025-05-12T14:54:53.584090" level="WARN">The chromedriver version (135.0.7049.84) detected in PATH at /opt/homebrew/bin/chromedriver might not be compatible with the detected chrome version (136.0.7103.93); currently, chromedriver 136.0.7103.92 is recommended for chrome 136.*, so it is advised to delete the driver in PATH and retry</msg>
 </errors>
 </robot>
