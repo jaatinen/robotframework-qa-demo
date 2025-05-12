@@ -1,0 +1,13 @@
+robotframework==7.2.2
+robotframework-seleniumlibrary
+robotframework-requests
+robotframework-databaselibrary
+pytest
+requests==2.32.3
+robotframework-appiumlibrary==2.1.0
+robotframework-jsonlibrary==0.5
+robotframework-pythonlibcore==4.4.1
+robotframework-tidy==4.0
+rpaframework-core==11.3.3
+rpaframework-recognition==5.2.4
+selenium==4.12

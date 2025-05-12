@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2.2 (Python 3.13.2 on darwin)" generated="2025-04-18T08:34:48.556549" rpa="false" schemaversion="5">
+<suite id="s1" name="Login Test2" source="/Users/juhojaatinen/robotframework-qa-demo/login_test2.robot">
+<test id="s1-t1" name="Wikipedia Page Should Load Successfully" line="8">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-04-18T08:34:48.698350" level="INFO">Opening browser 'chrome' to base url 'https://www.wikipedia.org'.</msg>
+<arg>${URL}</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-04-18T08:34:48.698245" elapsed="7.774356"/>
+</kw>
+<kw name="Title Should Be" owner="SeleniumLibrary">
+<msg time="2025-04-18T08:34:56.474991" level="INFO">Page title is 'Wikipedia'.</msg>
+<arg>Wikipedia</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<status status="PASS" start="2025-04-18T08:34:56.472919" elapsed="0.002112"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-04-18T08:34:56.475222" elapsed="0.069941"/>
+</kw>
+<status status="PASS" start="2025-04-18T08:34:48.697849" elapsed="7.847410"/>
+</test>
+<status status="PASS" start="2025-04-18T08:34:48.557459" elapsed="7.988081"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Login Test2" id="s1" pass="1" fail="0" skip="0">Login Test2</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

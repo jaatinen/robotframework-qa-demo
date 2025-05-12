@@ -1,0 +1,75 @@
+name: Robot Framework UI Tests
+
+on:
+  push:
+    paths:
+      - 'tests/ui/**'
+  workflow_dispatch:
+
+jobs:
+  robot-ui-tests:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repo
+      uses: actions/checkout@v3
+
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.11'
+
+    - name: Install Robot Framework and Selenium dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install robotframework selenium robotframework-seleniumlibrary
+
+    - name: Install Google Chrome
+      uses: browser-actions/setup-chrome@latest
+
+    - name: Run Robot Framework UI tests and capture result
+      run: |
+        cd tests/ui
+        robot . || echo "FAIL" > ../../test_status.txt
+        if [ ! -f ../../test_status.txt ]; then echo "PASS" > ../../test_status.txt; fi
+
+    - name: Read test result
+      id: result
+      run: |
+        STATUS=$(cat test_status.txt)
+        echo "status=$STATUS" >> $GITHUB_OUTPUT
+
+    - name: Upload Robot Framework results
+      if: always()
+      uses: actions/upload-artifact@v4
+      with:
+        name: robot-ui-test-results
+        path: |
+          tests/ui/output.xml
+          tests/ui/log.html
+          tests/ui/report.html
+
+    - name: Lisää kommentti Jira-tikettiin (SCRUM-1)
+      if: always()
+      run: |
+        curl -X POST \
+          -u "${{ secrets.JIRA_EMAIL }}:${{ secrets.JIRA_API_TOKEN }}" \
+          -H "Content-Type: application/json" \
+          --data '{
+            "body": {
+              "type": "doc",
+              "version": 1,
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "type": "text",
+                      "text": "🧪 Robot Framework UI testit on ajettu.\n\nTulos: ${{ steps.result.outputs.status }}\n📄 Raportti: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+                    }
+                  ]
+                }
+              ]
+            }
+          }' \
+          https://${{ secrets.JIRA_DOMAIN }}/rest/api/3/issue/SCRUM-1/comment

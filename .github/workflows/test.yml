@@ -1,0 +1,89 @@
+name: Run Tests
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  # Run general API tests
+  api-tests:
+    runs-on: ubuntu-latest
+    name: Run API Tests
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+      - name: Run API Tests
+        run: robot tests/api
+
+  # Run FHIR Appointment tests
+  fhir-tests:
+    runs-on: ubuntu-latest
+    name: Run FHIR Appointment Tests
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+      - name: Run FHIR Tests
+        run: robot fhir.robot
+
+  # Run React unit tests
+  frontend-tests:
+    runs-on: ubuntu-latest
+    name: Run React unit tests
+    defaults:
+      run:
+        working-directory: frontend-tests
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+      - name: Install dependencies
+        run: npm install
+      - name: Run frontend tests
+        run: npm test -- --watchAll=false
+
+  # Run Python unit tests
+  python-tests:
+    runs-on: ubuntu-latest
+    name: Run Python Unit Tests
+    defaults:
+      run:
+        working-directory: python-tests
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+      - name: Run tests
+        run: pytest
+
+  # Run JMeter Performance Tests
+  jmeter-tests:
+    runs-on: ubuntu-latest
+    name: Run JMeter Performance Tests
+    steps:
+      - uses: actions/checkout@v3
+      - name: Install JMeter
+        run: sudo apt-get update && sudo apt-get install -y jmeter
+      - name: Remove old JMeter results and HTML report
+        run: |
+          rm -rf tests/performance/html-report
+          rm -f results.jtl
+      - name: Run JMeter test
+        run: jmeter -n -t tests/performance/reqres_api_test.jmx -l results.jtl -e -o tests/performance/html-report

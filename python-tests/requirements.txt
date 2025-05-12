@@ -1,0 +1,5 @@
+robotframework
+robotframework-requests
+robotframework-databaselibrary
+pytest
+selenium==4.12
